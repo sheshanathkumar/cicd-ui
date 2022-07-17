@@ -1,0 +1,29 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre-build:
+    commands:
+      - echo "entering into pre build phase (installing UI application)"
+      - cd cicd-ui
+      - npm install
+      - npm run build -- --prod
+  build:
+    commands:
+      - echo "entering into build phase"
+      - ./gradlew clean build --scan
+  post-build:
+    commands:
+      - echo "entering into post build phase"
+    finally:
+      - rm -f  /root/.gradle/caches/modules-2/modules-2.lock
+      - rm -fr /root/.gradle/caches/*/plugin-resolution/
+artifacts:
+  files:
+    - '*-0.1.war'
+  base-directory: 'build/libs'
+cache:
+  paths:
+    - '/root/.gradle/caches/**/*'
+    - '/root/.gradle/wrapper/**/*'

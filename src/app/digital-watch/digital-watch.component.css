@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-size: cover;
+    background-color: rgb(255, 255, 255);
+}
+
+.person-name{
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400px;
+    font-size: 100px;
+    
+}
+
+.search{
+    margin: auto;
+}
+
+.google-search {
+    border-radius: 10px;
+    background-color: #edf3f1;
+    color: rgb(0, 0, 0);
+    
+}
+
+.button {
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    background-color: #01583b;
+}
+
+.clock {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: #2a2c2c;
+    box-shadow: 10px 30px 70px rgb(33, 33, 36),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(0, 0, 0, 0.2),
+        inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 150px;
+    
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #000000;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.clock span {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--dig)));
+}
+
+.clock span b {
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--dig)));
+}
+
+.hand {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hand i {
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    border-radius: 50px;
+}
+
+
+.hand2 {
+    height: 290px;
+    width: 290px;
+}
+
+.hand3 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
